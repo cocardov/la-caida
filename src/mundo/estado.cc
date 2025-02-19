@@ -1,7 +1,5 @@
 #include "estado.hh"
 
-static const estado estadoGlobal = estado();
-
 void estado::morir()
 {
     if (this->salud <= 0)

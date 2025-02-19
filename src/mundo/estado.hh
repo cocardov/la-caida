@@ -17,6 +17,6 @@ private:
    void morir();
 }; // class estado
 
-static const estado estadoGlobal;
+static estado estadoGlobal;
 
 #endif
