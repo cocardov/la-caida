@@ -12,9 +12,12 @@ namespace llanura_nivel_1
     void inspeccionarPlanta();
     void seguirInspeccionando();
 
+    bool tocarBaya = true;
+    bool tocarHoja = true;
 
     void inic_nivel()
     {
+
         std::cout << "\n";
         std::cout << "\n";
         std::cout << "  Decidís continuar por el camino de la derecha, de repente, todo se ilumina a tu \n";
@@ -27,7 +30,7 @@ namespace llanura_nivel_1
         std::cout << "2. No. \n";
         std::cout << "\n";
 
-        bool tocarBaya = true;
+        tocarBaya = true;
 
         while (tocarBaya == true)
         {
@@ -40,9 +43,16 @@ namespace llanura_nivel_1
             case 1:
                 inspeccionarPlanta();
                 tocarBaya = false;
-                break;
+                if (tocarHoja == false)
+                {
+                    break;
+                }
+                else if (tocarHoja == true)
+                {
+                    return;
+                }
 
-                case 2:
+            case 2:
                 noInspeccionarPlanta();
                 tocarBaya = false;
                 break;
@@ -59,7 +69,6 @@ namespace llanura_nivel_1
                 break;
             }
         } // 1er while
-
 
         std::cout << "  Como sea, seguís adelante. Recorres cerca de un kilómetro y te empezás a preocupar \n";
         std::cout << "ya que tenés sed y hambre, por ahora te alimentás, pero tus recursos son limitados. \n";
@@ -105,8 +114,6 @@ namespace llanura_nivel_1
 
     } // void inic_nivel()
 
-
-
     void inspeccionarPlanta()
     {
         std::cout << " \n";
@@ -115,12 +122,12 @@ namespace llanura_nivel_1
         std::cout << "agarrar uno. Lo guardás en un frasco que tenías en la mochila. \n";
         std::cout << " --Baya desconocida +1. \n";
         std::cout << " \n";
-        
+
         std::cout << "  Seguir inspeccionando? \n";
         std::cout << "1. Sí.\n";
         std::cout << "2. No.\n";
 
-        bool tocarHoja = true;
+        tocarHoja = true;
 
         while (tocarHoja == true)
         {
@@ -132,12 +139,13 @@ namespace llanura_nivel_1
             {
             case 1:
                 seguirInspeccionando();
-                tocarHoja = false;
+                tocarHoja = true;
                 return;
             case 2:
                 std::cout << "Decidís conformarte con los frutos. \n";
+                std::cout << " \n";
                 tocarHoja = false;
-                break;
+                return;
             default:
                 std::cout << " \n";
                 std::cout << " \n";
@@ -150,11 +158,9 @@ namespace llanura_nivel_1
                 break;
             }
         }
-           
-           return;
-    } //void inspeccionarPlanta()
 
-
+        return;
+    } // void inspeccionarPlanta()
 
     void noInspeccionarPlanta()
     {
@@ -164,22 +170,62 @@ namespace llanura_nivel_1
         std::cout << "de la planta podría ser peligroso. \n";
         std::cout << " \n";
         return;
-    }  //void noInspeccionarPlanta()
-
-
+    } // void noInspeccionarPlanta()
 
     void seguirInspeccionando()
     {
-        std::cout << "te moriste wacho. \n";
+        std::cout << "  Las hojas de la planta tienen un tacto extraño, parieran no tener peso. Esto te llama \n";
+        std::cout << "mucho la atención. Guardás un par de ojas en otro frasco, una vez en la superficie podrías \n";
+        std::cout << "investigarlas. \n";
+        std::cout << " \n";
+        std::cout << "  Como sea, seguís adelante. Recorres cerca de un kilómetro y te empezás a preocupar \n";
+        std::cout << "ya que tenés sed y hambre, por ahora te alimentás, pero tus recursos son limitados. \n";
+        std::cout << "  Avanzás unos kilómetros más, contemplando un mundo inimaginable, criaturas que \n";
+        std::cout << "parecen flotar, animales que atraviesan objetos. \n";
+        std::cout << " \n";
+        std::cout << "  Entrás en una zona pantanosa, apenas podés caminar. Te arrepentís y volvés, se está \n";
+        std::cout << "terminando la luz (en la superficie aparentemente está anocheciendo). Por lo que \n";
+        std::cout << "decidís acampar en lo que parece ser una cueva pequeña (es apenas una cavidad de tierra \n";
+        std::cout << "faltante en una pared, probablemente provocada por la actividad sísmica). \n";
+        std::cout << "  Decidís acostarte y descansar...\n";
+        std::cout << " \n";
+        std::cout << "  Te despertaste en medio de la noche por un dolor insoportable. Tu brazo izquierdo \n";
+        std::cout << "sufre de una necrosis fuertísima, desprende un olor horrible. \n";
+        std::cout << "  Debido a tus recursos limitados no podés hacer nada más que esperar tu muerte debido \n";
+        std::cout << "a la infección.\n";
+        std::cout << " \n";
+        std::cout << "< Moriste > \n";
+        std::cout << " \n";
+        std::cout << "1. Volver a jugar Llanura nivel 1. \n";
+        std::cout << " \n";
+
+        while (true)
+        {
+            std::string option;
+            std::cout << "Tu elección: ";
+            std::getline(std::cin, option);
+
+            switch (std::atoi(option.c_str()))
+            {
+            case 1:
+                inic_nivel();
+                return;
+            default:
+                std::cout << " \n";
+                std::cout << " \n";
+                std::cout << " \n";
+                std::cout << "Por favor elige una opción válida" << std::endl;
+                std::cout << " \n";
+                std::cout << "1. Volver a jugar Llanura nivel 1. \n";
+                std::cout << " \n";
+                break;
+            }
+        }
         std::cout << " \n";
         std::cout << " \n";
-        std::cout << " \n";
-        std::cout << " \n";
-        inic_nivel();
+        tocarBaya = false;
+        tocarHoja = false;
+        return;
     }
-
-
-
-
 
 } // namespace llanura_nivel_1.

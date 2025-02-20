@@ -21,7 +21,7 @@ namespace nivel_2
     std::cout << "  Divisás en una de las paredes runas antiguas escritas con un tipo de tinta muy \n";
     std::cout << "oscura. Alcanzás a diferenciar el caracter de <Ignición>. \n";
     std::cout << " \n";
-    std::cout << "  Ahora puedes: \n";
+    std::cout << "  Ahora podés: \n";
     std::cout << "1. Intentar recitar las runas que ves en la pared. Aunque pueda resultar peligroso. \n";
     std::cout << "2. Seguir explorando a oscuras. \n";
     std::cout << " \n";
@@ -78,6 +78,7 @@ namespace nivel_2
       std::cout << "para poder ver bien de qué se trata. Lo que tenés en la mano es una especie de cristal \n";
       std::cout << "bastante pulido, casi sin aristas, de color celeste y con una runa que no reconocés \n";
       std::cout << "grabada sobre la superficie. No le dás importancia y la guardás en tu bolso. \n";
+      std::cout << "--Runa +1 \n";
       std::cout << " \n";
     }
 
@@ -93,6 +94,7 @@ namespace nivel_2
     std::cout << "es. Resulta ser una especie de cristal bastante pulido, casi sin aristas, de color \n";
     std::cout << "celeste y con una runa que no reconocés grabada sobre la superficie. No le dás importancia \n";
     std::cout << "y la guardás en tu bolso. \n";
+    std::cout << "--Runa +1 \n";
     std::cout << " \n";
     }
   }
@@ -106,6 +108,7 @@ namespace nivel_2
     std::cout << "para poder ver bien de qué se trata. Lo que tenés en la mano es una especie de cristal \n";
     std::cout << "bastante pulido, casi sin aristas, de color celeste y con una runa que no reconocés \n";
     std::cout << "grabada sobre la superficie. No le dás importancia y la guardás en tu bolso. \n";
+    std::cout << "--Runa +1 \n";
     std::cout << " \n";
   }
 
