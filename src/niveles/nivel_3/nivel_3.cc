@@ -39,8 +39,8 @@ namespace nivel_3
         std::cout << " \n";
         std::cout << "Por favor elige una opción válida" << std::endl;
         std::cout << " \n";
-        std::cout << "1. Tomar el camino de la izquieda (parece que sigue bajando)";
-        std::cout << "2. Tomar el camino de la derecha (sigue derecho)";
+        std::cout << "1. Tomar el camino de la izquieda (parece que sigue bajando).\n";
+        std::cout << "2. Tomar el camino de la derecha (sigue derecho).\n";
         std::cout << " \n";
 
         break;
