@@ -4,7 +4,7 @@
 class estado
 {
 public:
-   int valentía, hechicero, suerte, salud, hambre;
+   int valentía, hechicero, suerte, salud, hambre, precaución, inteligencia;
    bool muerto;
    void actualizarSalud(int salud);
 
