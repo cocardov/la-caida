@@ -7,8 +7,12 @@
 
 namespace llanura_nivel_1
 {
+
     void noInspeccionarPlanta();
     void inspeccionarPlanta();
+    void seguirInspeccionando();
+
+
     void inic_nivel()
     {
         std::cout << "\n";
@@ -22,7 +26,10 @@ namespace llanura_nivel_1
         std::cout << "1. Sí. \n";
         std::cout << "2. No. \n";
         std::cout << "\n";
-        while (true)
+
+        bool tocarBaya = true;
+
+        while (tocarBaya == true)
         {
             std::string option;
             std::cout << "Tu elección: ";
@@ -32,10 +39,13 @@ namespace llanura_nivel_1
             {
             case 1:
                 inspeccionarPlanta();
-                return;
-            case 2:
+                tocarBaya = false;
+                break;
+
+                case 2:
                 noInspeccionarPlanta();
-                return;
+                tocarBaya = false;
+                break;
             default:
                 std::cout << " \n";
                 std::cout << " \n";
@@ -48,7 +58,8 @@ namespace llanura_nivel_1
 
                 break;
             }
-        }
+        } // 1er while
+
 
         std::cout << "  Como sea, seguís adelante. Recorres cerca de un kilómetro y te empezás a preocupar \n";
         std::cout << "ya que tenés sed y hambre, por ahora te alimentás, pero tus recursos son limitados. \n";
@@ -74,10 +85,10 @@ namespace llanura_nivel_1
             switch (std::atoi(option.c_str()))
             {
             case 1:
-                //completar, hacer función void encenderFuego()
+                // completar, hacer función void encenderFuego()
                 return;
             case 2:
-                //completar, hacer función void manternerCalor() (va a ser solo texto, pero no importa)
+                // completar, hacer función void manternerCalor() (va a ser solo texto, pero no importa)
                 return;
             default:
                 std::cout << " \n";
@@ -92,7 +103,9 @@ namespace llanura_nivel_1
             }
         }
 
-    } //void inic_nivel()
+    } // void inic_nivel()
+
+
 
     void inspeccionarPlanta()
     {
@@ -102,7 +115,46 @@ namespace llanura_nivel_1
         std::cout << "agarrar uno. Lo guardás en un frasco que tenías en la mochila. \n";
         std::cout << " --Baya desconocida +1. \n";
         std::cout << " \n";
-    }
+        
+        std::cout << "  Seguir inspeccionando? \n";
+        std::cout << "1. Sí.\n";
+        std::cout << "2. No.\n";
+
+        bool tocarHoja = true;
+
+        while (tocarHoja == true)
+        {
+            std::string option;
+            std::cout << "Tu elección: ";
+            std::getline(std::cin, option);
+
+            switch (std::atoi(option.c_str()))
+            {
+            case 1:
+                seguirInspeccionando();
+                tocarHoja = false;
+                return;
+            case 2:
+                std::cout << "Decidís conformarte con los frutos. \n";
+                tocarHoja = false;
+                break;
+            default:
+                std::cout << " \n";
+                std::cout << " \n";
+                std::cout << " \n";
+                std::cout << "Por favor elige una opción válida" << std::endl;
+                std::cout << " \n";
+                std::cout << "1. Sí. \n";
+                std::cout << "2. No. \n";
+                std::cout << " \n";
+                break;
+            }
+        }
+           
+           return;
+    } //void inspeccionarPlanta()
+
+
 
     void noInspeccionarPlanta()
     {
@@ -111,6 +163,23 @@ namespace llanura_nivel_1
         std::cout << "  Ignorás la flora desconocida. Un movimiento inteligente, no conocer las propiedades \n";
         std::cout << "de la planta podría ser peligroso. \n";
         std::cout << " \n";
+        return;
+    }  //void noInspeccionarPlanta()
+
+
+
+    void seguirInspeccionando()
+    {
+        std::cout << "te moriste wacho. \n";
+        std::cout << " \n";
+        std::cout << " \n";
+        std::cout << " \n";
+        std::cout << " \n";
+        inic_nivel();
     }
+
+
+
+
 
 } // namespace llanura_nivel_1.

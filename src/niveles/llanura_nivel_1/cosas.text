@@ -1,0 +1,30 @@
+std::cout << "  Seguir inspeccionando? \n";
+                std::cout << "1. Sí.\n";
+                std::cout << "2. No.\n";
+
+                while (true)
+                {
+                    std::string option;
+                    std::cout << "Tu elección: ";
+                    std::getline(std::cin, option);
+
+                    switch (std::atoi(option.c_str()))
+                    {
+                    case 1:
+                        seguirInspeccionando();                                // si se sigue inspeccionando se va a una ruta en la que muere.
+                        return;
+                    case 2:
+                        std::cout << "Decidís conformarte con los frutos. \n"; // quiero que al tomar esta opción salga de los dos while (true)
+                        return;
+                    default:
+                        std::cout << " \n";
+                        std::cout << " \n";
+                        std::cout << " \n";
+                        std::cout << "Por favor elige una opción válida" << std::endl;
+                        std::cout << " \n";
+                        std::cout << "1. Sí. \n";
+                        std::cout << "2. No. \n";
+                        std::cout << " \n";
+                        break;
+                    }
+                }
