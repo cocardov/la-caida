@@ -18,6 +18,7 @@ namespace llanura_nivel_1
     bool tocarHoja = true;
     bool recitarRuna = true;
     bool sobrevivir = true;
+    
 
     void inic_nivel()
     {
@@ -47,6 +48,7 @@ namespace llanura_nivel_1
             case 1:
                 inspeccionarPlanta();
                 tocarBaya = false;
+
                 if (tocarHoja == false)
                 {
                     break;
@@ -123,7 +125,16 @@ namespace llanura_nivel_1
 
                 return;
             case 2:
-                // llanura_nivel_2::inic_nivel()
+                std::cout << "\n";
+                std::cout << "  No hacés fuego, ya que podría salir mal o atraer alguna criatura...\n";
+                std::cout << "\n";
+                std::cout << "  Te acostás en el piso, con tu mochila encima tuyo, no es mucho, es casi nada, \n";
+                std::cout << "pero te ayuda a conservar algo de calor. \n";
+                std::cout << "  Dormís... \n";
+                std::cout << "\n";
+
+                llanura_nivel_2::inic_nivel();
+
                 return;
             default:
                 std::cout << " \n";
