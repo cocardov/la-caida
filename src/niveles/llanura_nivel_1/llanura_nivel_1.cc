@@ -11,9 +11,13 @@ namespace llanura_nivel_1
     void noInspeccionarPlanta();
     void inspeccionarPlanta();
     void seguirInspeccionando();
+    void encenderFuego();
+    void llamarCriatura();
 
     bool tocarBaya = true;
     bool tocarHoja = true;
+    bool recitarRuna = true;
+    bool sobrevivir = true;
 
     void inic_nivel()
     {
@@ -90,14 +94,36 @@ namespace llanura_nivel_1
             std::string option;
             std::cout << "Tu elección: ";
             std::getline(std::cin, option);
+      
 
             switch (std::atoi(option.c_str()))
             {
             case 1:
-                // completar, hacer función void encenderFuego()
+                encenderFuego();
+                if (recitarRuna == true)
+                {
+                   llamarCriatura();
+                   if (sobrevivir == true)
+                   {
+                    //llanura_nivel_2::inic_nivel()
+                    return;
+                   }
+
+                   else if (sobrevivir == false)
+                   {
+                    return;
+                   } 
+                }
+
+                else if (recitarRuna == false)
+                {
+                    //llanura_nivel_2::inic_nivel()
+                    return;
+                }
+
                 return;
             case 2:
-                // completar, hacer función void manternerCalor() (va a ser solo texto, pero no importa)
+                // llanura_nivel_2::inic_nivel()
                 return;
             default:
                 std::cout << " \n";
@@ -110,7 +136,9 @@ namespace llanura_nivel_1
                 std::cout << " \n";
                 break;
             }
-        }
+        } // 2ndo while
+
+
 
     } // void inic_nivel()
 
@@ -226,6 +254,138 @@ namespace llanura_nivel_1
         tocarBaya = false;
         tocarHoja = false;
         return;
-    }
+
+    } // void seguirInspeccionando()
+
+    void encenderFuego()
+    {
+        std::cout << " \n";
+        std::cout << "  Se te ocurre una idea. Juntás un poco de leña de la zona y recitás las runas que habías \n";
+        std::cout << "anotado en tu diario antes. \n";
+        std::cout << " \n";
+    
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        std::uniform_real_distribution<> distrib(0.0, 1.0);
+
+        float random_float = distrib(gen); // generar una probabilidad del 80% de que salga bien.
+
+        if (random_float <= 0.8f) // posibilidad 1, sale bien
+        {
+            std::cout << "  Increíblemente lográs recitar bien las runas, invocás una esfera de fuego que aparece \n";
+            std::cout << "frente a vos, la direccionás al montón de leña que habías juntado y éste arde. \n";
+            std::cout << "  Te alegrás por el fuego, te desconcentrás y la esfera se consume. \n";
+            std::cout << " \n";
+            recitarRuna = true;
+            return;
+        }
+
+        else if (random_float > 0.8f) //probabilidad 2, sale mal
+        {
+            std::cout << "  Te equivocás pronunciando un fonema, no terminás de entender del todo cómo estaría bien \n";
+            std::cout << "dicho. Apenas se llega a generar una leve luz, pero no lográs encender fuego.\n";
+            std::cout << " \n";
+            recitarRuna = false;
+            return;
+        }
+        return;
+    } // void encenderFuego()
+
+    void llamarCriatura()
+    {
+    std::cout << " \n";
+    std::cout << "  Pronto sucumbís al sueño...\n";
+    std::cout << " \n";
+    std::cout << "  Te despestás en medio de la noche. Hay algo afuera, pero no sabés qué es. \n";
+    std::cout << " \n";
+    std::cout << "  Ahora podés:\n";
+    std::cout << "1. Auyentar a lo que sea que esté afuera. \n";
+    std::cout << "2. Quedarse en silencio. \n";
+    std::cout << "\n";
+
+    while (true)
+    {
+        std::string option;
+        std::cout << "Tu elección: ";
+        std::getline(std::cin, option);
+
+        switch (std::atoi(option.c_str()))
+        {
+        case 1:
+            std::cout << " \n";
+            std::cout << "  Te levantás y empezás a gritar para que la criatura se vaya. Ésta al escucharte \n";
+            std::cout << "se acerca... \n";
+            std::cout << "\n";
+            std::cout << "  No sabés con lo que te metiste. Frente a la entrada de la cueva ahora hay un bicho \n";
+            std::cout << "de casi 3m de altura. Sin pelo, con una piel parecida a la tuya, pero con escamas. \n";
+            std::cout << "Su cabeza es desproporcionalmente enorme en comparación con su cuerpo. Y sus ojos son \n";
+            std::cout << "completamente negros. \n";
+            std::cout << " \n";
+            std::cout << "  Se te hela la sangre. No podés hacer nada porque te quedaste paralizado ante ésta atrocidad. \n";
+            std::cout << "  El bicho empieza a correr hacia vos, y un segundo después ya está enfrente tuyo. Es \n";
+            std::cout << "muy rápido. Abre su boca con forma de pico, y ves que adentro no hay más que muchos dientes \n";
+            std::cout << "esperando tu carne. \n";
+            std::cout << "  Empieza arrancándote tu brazo izquierdo de un mordisco. Sigue con tu cabeza. \n";
+            std::cout << " \n";
+            std::cout << "< Moriste > \n";
+            std::cout << " \n";
+            std::cout << "1. Volver a jugar Llanura nivel 1. \n";
+            std::cout << " \n";
+    
+            sobrevivir = false;
+
+            while (true)
+            {
+                std::string option;
+                std::cout << "Tu elección: ";
+                std::getline(std::cin, option);
+    
+                switch (std::atoi(option.c_str()))
+                {
+                case 1:
+                    inic_nivel();
+                    return;
+                default:
+                    std::cout << " \n";
+                    std::cout << " \n";
+                    std::cout << " \n";
+                    std::cout << "Por favor elige una opción válida" << std::endl;
+                    std::cout << " \n";
+                    std::cout << "1. Volver a jugar Llanura nivel 1. \n";
+                    std::cout << " \n";
+                    break;
+                }
+            }
+            return;
+
+        case 2:
+            std::cout << " \n";
+            std::cout << "  Decidís quedarte en silencio. Rápidamente te das cuenta que es tu mejor opción. \n";
+            std::cout << "  Frente a la entrada de la cueva pasa un bicho de casi 3m de altura. Sin pelo, con \n";  
+            std::cout << "una piel parecida a la tuya, pero con escamas. Su cabeza es desproporcionalmente enorme \n";
+            std::cout << "en comparación con su cuerpo. Y sus ojos son completamente negros. \n";
+            std::cout << " \n";
+            std::cout << "  Por suerte, no te vé. \n";
+            std::cout << "  Intentás seguir durmiendo. Te obligás a hacerlo. \n";
+
+            sobrevivir = true;
+
+            return;
+        
+        default:
+            std::cout << " \n";
+            std::cout << " \n";
+            std::cout << " \n";
+            std::cout << "Por favor elige una opción válida" << std::endl;
+            std::cout << " \n";
+            std::cout << "1. Auyentar a lo que sea que esté afuera. \n";
+            std::cout << "2. Quedarse en silencio. \n";
+            std::cout << " \n";
+
+            break;
+        }
+    } //while opción encenderFuego()
+
+    }// llamarCriatura().
 
 } // namespace llanura_nivel_1.

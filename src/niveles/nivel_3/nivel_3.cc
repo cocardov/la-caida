@@ -16,7 +16,7 @@ namespace nivel_3
     std::cout << "para descansar. \n";
     std::cout << "\n";
     std::cout << "  Ves que más adelante la cueva se difurca tenés dos opciones: \n";
-    std::cout << "1. Tomar el camino de la izquieda (parece que sigue bajando). \n";
+    std::cout << "1. Tomar el camino de la izquierda (parece que sigue bajando). \n";
     std::cout << "2. Tomar el camino de la derecha (sigue derecho). \n";
     std::cout << "\n";
     while (true)
@@ -39,7 +39,7 @@ namespace nivel_3
         std::cout << " \n";
         std::cout << "Por favor elige una opción válida" << std::endl;
         std::cout << " \n";
-        std::cout << "1. Tomar el camino de la izquieda (parece que sigue bajando).\n";
+        std::cout << "1. Tomar el camino de la izquierda (parece que sigue bajando).\n";
         std::cout << "2. Tomar el camino de la derecha (sigue derecho).\n";
         std::cout << " \n";
 
