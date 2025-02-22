@@ -17,6 +17,8 @@ MAZMORRA_NIVEL_2_OBJ = $(BUILD_DIR)/mazmorra_nivel_2/mazmorra_nivel_2.o
 LLANURA_NIVEL_1_OBJ = $(BUILD_DIR)/llanura_nivel_1/llanura_nivel_1.o
 LLANURA_NIVEL_2_OBJ = $(BUILD_DIR)/llanura_nivel_2/llanura_nivel_2.o
 SEGUIR_HUELLAS_NIVEL_1_OBJ = $(BUILD_DIR)/seguir_huellas_nivel_1/seguir_huellas_nivel_1.o
+DERIVA_OBJ = $(BUILD_DIR)/deriva/deriva.o
+MERCADO_RURAL_OBJ = $(BUILD_DIR)/mercado_rural.o
 ESTADO_OBJ = $(BUILD_DIR)/mundo/estado.o
 INVENTARIO_OBJ = $(BUILD_DIR)/mundo/inventario.o
 
@@ -30,6 +32,8 @@ MAZMORRA_NIVEL_2_SRC = $(SOURCE_DIR)/niveles/mazmorra_nivel_2/mazmorra_nivel_2.c
 LLANURA_NIVEL_1_SRC = $(SOURCE_DIR)/niveles/llanura_nivel_1/llanura_nivel_1.cc
 LLANURA_NIVEL_2_SRC = $(SOURCE_DIR)/niveles/llanura_nivel_2/llanura_nivel_2.cc
 SEGUIR_HUELLAS_NIVEL_1_SRC = $(SOURCE_DIR)/niveles/seguir_huellas_nivel_1/seguir_huellas_nivel_1.cc
+DERIVA_SRC = $(SOURCE_DIR)/niveles/deriva/deriva.cc
+MERCADO_RURAL_SRC = $(SOURCE_DIR)/niveles/mercado_rural/mercado_rural.cc
 ESTADO_SRC = $(SOURCE_DIR)/mundo/estado.cc
 INVENTARIO_SRC = $(SOURCE_DIR)/mundo/inventario.cc
 
@@ -38,7 +42,8 @@ CFLAGS = -Wall -g -I$(CURDIR)/$(SOURCE_DIR) -I$(CURDIR)/$(SOURCE_DIR)/niveles -I
 CC = g++
 
 INCLUDE_LIBS = $(NIVEL_1_OBJ) $(NIVEL_2_OBJ) $(NIVEL_3_OBJ) $(LLANURA_NIVEL_1_SRC) $(LLANURA_NIVEL_2_SRC) \
-	$(MAZMORRA_NIVEL_1_SRC) $(MAZMORRA_NIVEL_2_SRC) $(SEGUIR_HUELLAS_NIVEL_1_SRC) $(ESTADO_SRC) $(INVENTARIO_SRC)
+	$(MAZMORRA_NIVEL_1_SRC) $(MAZMORRA_NIVEL_2_SRC) $(SEGUIR_HUELLAS_NIVEL_1_SRC) $(DERIVA_SRC) $(MERCADO_RURAL_SRC) \
+	$(ESTADO_SRC) $(INVENTARIO_SRC)
 
 $(BUILD_DIR)/nivel_1:
 	mkdir -p $(BUILD_DIR)/nivel_1
@@ -63,6 +68,12 @@ $(BUILD_DIR)/llanura_nivel_2:
 
 $(BUILD_DIR)/seguir_huellas_nivel_1:
 	mkdir -p $(BUILD_DIR)/seguir_huellas_nivel_1
+
+$(BUILD_DIR)/deriva:
+	mkdir -p $(BUILD_DIR)/deriva
+
+$(BUILD_DIR)/mercado_rural:
+	mkdir -p $(BUILD_DIR)/mercado_rural
 
 $(BUILD_DIR)/mundo:
 	mkdir -p $(BUILD_DIR)/mundo
@@ -102,6 +113,12 @@ $(LLANURA_NIVEL_2_OBJ): $(NIVEL_2_SRC) $(BUILD_DIR)/llanura_nivel_2
 
 $(SEGUIR_HUELLAS_NIVEL_1_OBJ): $(NIVEL_1_SRC) $(BUILD_DIR)/seguir_huellas_nivel_1
 	$(CC) $(CFLAGS) -c $(SEGUIR_HUELLAS_NIVEL_1_SRC) -o $(SEGUIR_HUELLAS-NIVEL_1_OBJ)
+
+$(DERIVA_OBJ): $(NIVEL_1_SRC) $(BUILD_DIR)/deriva
+	$(CC) $(CFLAGS) -c $(DERIVA_SRC) -o $(DERIVA_OBJ)
+
+$(MERCADO_RURAL_OBJ): $(NIVEL_1_SRC) $(BUILD_DIR)/mercado_rural
+	$(CC) $(CFLAGS) -c $(MERCADO_RURAL_SRC) -o $(MERCADO_RURAL_OBJ)
 
 $(INVENTARIO_OBJ): $(NIVEL_1_SRC) $(BUILD_DIR)/mundo/inventario
 	$(CC) $(CFLAGS) -c $(INVENTARIO_SRC) -o $(INVENTARIO_OBJ)

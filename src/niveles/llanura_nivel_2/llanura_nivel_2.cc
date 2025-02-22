@@ -1,5 +1,6 @@
 #include "llanura_nivel_2.hh"
 #include "../seguir_huellas_nivel_1/seguir_huellas_nivel_1.hh"
+#include "../deriva/deriva.hh"
 #include <cstdlib>
 #include <iostream>
 #include <random>
@@ -19,6 +20,7 @@ namespace llanura_nivel_2
         std::cout << "que la comida que tenés no va a alcanzar ni siquiera para saciar tu hambre. \n";
         std::cout << " \n";
         std::cout << "  Ves como una especie de ave come frutos que crecen de algo parecido al musgo. Esperás a que se vaya. \n";
+        std::cout << "  Pareciera como que el ave te invita a comer los frutos. No puede hablar, pero sentís esa intención. \n";
         std::cout << " \n";
         std::cout << "1. Comer los mismos frutos que comió el ave.\n";
         std::cout << "2. No comer. \n";
@@ -80,7 +82,7 @@ namespace llanura_nivel_2
                 seguir_huellas_nivel_1::inic_nivel();
                 return;
             case 2:
-             
+                deriva::inic_nivel();
                 return;
             default:
 
