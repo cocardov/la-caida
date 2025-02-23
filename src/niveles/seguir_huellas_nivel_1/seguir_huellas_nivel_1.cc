@@ -8,6 +8,8 @@
 
 namespace seguir_huellas_nivel_1
 {
+    
+
     void inic_nivel()
     {
         std::cout << " \n";

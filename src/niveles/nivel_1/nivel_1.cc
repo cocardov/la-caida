@@ -21,7 +21,9 @@ namespace nivel_1
     std::cout << "firme y el suelo se desmorona a tu alrededor. Caés por un túnel, te golpeás la \n";
     std::cout << "cabeza y perdés la consciencia...\n";
     std::cout << " \n";
-    std::cout << "  Te despertás en el fondo, confundido. Ahora tenés dos opciones: \n";
+    std::cout << "  Te despertás en el fondo, confundido. Te sentís observado, pero no hay nada.\n";
+    std::cout << " \n";
+    std::cout << "  Ahora tenés dos opciones: \n";
     std::cout << "1. Intentar subir por el estrecho túnel por el que caíste.\n";
     std::cout << "2. Avanzar e intentar explorar la cueva." << std::endl;
     std::cout << " \n";

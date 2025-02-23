@@ -19,6 +19,8 @@ LLANURA_NIVEL_2_OBJ = $(BUILD_DIR)/llanura_nivel_2/llanura_nivel_2.o
 SEGUIR_HUELLAS_NIVEL_1_OBJ = $(BUILD_DIR)/seguir_huellas_nivel_1/seguir_huellas_nivel_1.o
 DERIVA_OBJ = $(BUILD_DIR)/deriva/deriva.o
 MERCADO_RURAL_OBJ = $(BUILD_DIR)/mercado_rural.o
+MERCADO_RURAL_2_OBJ = $(BUILD_DIR)/mercado_rural_2.o
+FINAL_BUENO_OBJ = $(BUILD_DIR)/final_bueno.o
 ESTADO_OBJ = $(BUILD_DIR)/mundo/estado.o
 INVENTARIO_OBJ = $(BUILD_DIR)/mundo/inventario.o
 
@@ -34,6 +36,8 @@ LLANURA_NIVEL_2_SRC = $(SOURCE_DIR)/niveles/llanura_nivel_2/llanura_nivel_2.cc
 SEGUIR_HUELLAS_NIVEL_1_SRC = $(SOURCE_DIR)/niveles/seguir_huellas_nivel_1/seguir_huellas_nivel_1.cc
 DERIVA_SRC = $(SOURCE_DIR)/niveles/deriva/deriva.cc
 MERCADO_RURAL_SRC = $(SOURCE_DIR)/niveles/mercado_rural/mercado_rural.cc
+MERCADO_RURAL_2_SRC = $(SOURCE_DIR)/niveles/mercado_rural_2/mercado_rural_2.cc
+FINAL_BUENO_SRC = $(SOURCE_DIR)/niveles/final_bueno/final_bueno.cc
 ESTADO_SRC = $(SOURCE_DIR)/mundo/estado.cc
 INVENTARIO_SRC = $(SOURCE_DIR)/mundo/inventario.cc
 
@@ -43,7 +47,7 @@ CC = g++
 
 INCLUDE_LIBS = $(NIVEL_1_OBJ) $(NIVEL_2_OBJ) $(NIVEL_3_OBJ) $(LLANURA_NIVEL_1_SRC) $(LLANURA_NIVEL_2_SRC) \
 	$(MAZMORRA_NIVEL_1_SRC) $(MAZMORRA_NIVEL_2_SRC) $(SEGUIR_HUELLAS_NIVEL_1_SRC) $(DERIVA_SRC) $(MERCADO_RURAL_SRC) \
-	$(ESTADO_SRC) $(INVENTARIO_SRC)
+	$(MERCADO_RURAL_2_SRC) $(FINAL_BUENO_SRC) $(ESTADO_SRC) $(INVENTARIO_SRC)
 
 $(BUILD_DIR)/nivel_1:
 	mkdir -p $(BUILD_DIR)/nivel_1
@@ -75,6 +79,11 @@ $(BUILD_DIR)/deriva:
 $(BUILD_DIR)/mercado_rural:
 	mkdir -p $(BUILD_DIR)/mercado_rural
 
+$(BUILD_DIR)/mercado_rural_2:
+	mkdir -p $(BUILD_DIR)/mercado_rural_2
+
+$(BUILD_DIR)/final_bueno:
+	mkdir -p $(BUILD_DIR)/final_bueno
 $(BUILD_DIR)/mundo:
 	mkdir -p $(BUILD_DIR)/mundo
 
@@ -119,6 +128,12 @@ $(DERIVA_OBJ): $(NIVEL_1_SRC) $(BUILD_DIR)/deriva
 
 $(MERCADO_RURAL_OBJ): $(NIVEL_1_SRC) $(BUILD_DIR)/mercado_rural
 	$(CC) $(CFLAGS) -c $(MERCADO_RURAL_SRC) -o $(MERCADO_RURAL_OBJ)
+
+$(MERCADO_RURAL_2_OBJ): $(NIVEL_1_SRC) $(BUILD_DIR)/mercado_rural_2
+	$(CC) $(CFLAGS) -c $(MERCADO_RURAL_2_SRC) -o $(MERCADO_RURAL_2_OBJ)
+
+$(FINAL_BUENO_OBJ): $(NIVEL_1_SRC) $(BUILD_DIR)/final_bueno
+	$(CC) $(CFLAGS) -c $(FINAL_BUENO_SRC) -o $(FINAL_BUENO_OBJ)
 
 $(INVENTARIO_OBJ): $(NIVEL_1_SRC) $(BUILD_DIR)/mundo/inventario
 	$(CC) $(CFLAGS) -c $(INVENTARIO_SRC) -o $(INVENTARIO_OBJ)

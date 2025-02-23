@@ -40,6 +40,7 @@ namespace llanura_nivel_2
                 decidirComer = false;
                 return;
             case 2:
+                std::cout << " \n";
                 std::cout << "  Preferís no comer, sentís que todo acá abajo es venenoso.\n";
                 std::cout << " \n";
                 decidirComer = false;

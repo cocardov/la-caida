@@ -328,9 +328,9 @@ namespace llanura_nivel_1
             std::cout << "se acerca... \n";
             std::cout << "\n";
             std::cout << "  No sabés con lo que te metiste. Frente a la entrada de la cueva ahora hay un bicho \n";
-            std::cout << "de casi 3m de altura. Sin pelo, con una piel parecida a la tuya, pero con escamas. \n";
-            std::cout << "Su cabeza es desproporcionalmente enorme en comparación con su cuerpo. Y sus ojos son \n";
-            std::cout << "completamente negros. \n";
+            std::cout << "de casi 3m de altura. Sin pelo, con forma humanoide, una piel parecida a la tuya, pero  \n";
+            std::cout << "con escamas y sus patas parecen las de un ave. Su cabeza es desproporcionalmente enorme en\n";
+            std::cout << "comparación con su cuerpo. Y sus ojos son completamente negros. \n";
             std::cout << " \n";
             std::cout << "  Se te hela la sangre. No podés hacer nada porque te quedaste paralizado ante ésta atrocidad. \n";
             std::cout << "  El bicho empieza a correr hacia vos, y un segundo después ya está enfrente tuyo. Es \n";
