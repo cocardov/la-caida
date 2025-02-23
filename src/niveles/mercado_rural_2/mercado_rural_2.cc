@@ -1,5 +1,6 @@
 #include "mercado_rural_2.hh"
 #include "../final_bueno/final_bueno.hh"
+#include "../../utils/utils.hh"
 #include <cstdlib>
 #include <iostream>
 #include <random>

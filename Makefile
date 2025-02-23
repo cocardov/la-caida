@@ -23,6 +23,7 @@ MERCADO_RURAL_2_OBJ = $(BUILD_DIR)/mercado_rural_2.o
 FINAL_BUENO_OBJ = $(BUILD_DIR)/final_bueno.o
 ESTADO_OBJ = $(BUILD_DIR)/mundo/estado.o
 INVENTARIO_OBJ = $(BUILD_DIR)/mundo/inventario.o
+UTILS_OBJ = $(BUILD_DIR)/utils/utils.o
 
 # SOURCES 
 MAIN_SRC = $(SOURCE_DIR)/entrypoint.cc
@@ -40,14 +41,15 @@ MERCADO_RURAL_2_SRC = $(SOURCE_DIR)/niveles/mercado_rural_2/mercado_rural_2.cc
 FINAL_BUENO_SRC = $(SOURCE_DIR)/niveles/final_bueno/final_bueno.cc
 ESTADO_SRC = $(SOURCE_DIR)/mundo/estado.cc
 INVENTARIO_SRC = $(SOURCE_DIR)/mundo/inventario.cc
+UTILS_SRC = $(SOURCE_DIR)/utils/utils.cc
 
 # FLAGS 
-CFLAGS = -Wall -g -I$(CURDIR)/$(SOURCE_DIR) -I$(CURDIR)/$(SOURCE_DIR)/niveles -I$(CURDIR)/$(SOURCE_DIR)/mundo
+CFLAGS = -Wall -g -I$(CURDIR)/$(SOURCE_DIR) -I$(CURDIR)/$(SOURCE_DIR)/niveles -I$(CURDIR)/$(SOURCE_DIR)/mundo -lpthread
 CC = g++
 
-INCLUDE_LIBS = $(NIVEL_1_OBJ) $(NIVEL_2_OBJ) $(NIVEL_3_OBJ) $(LLANURA_NIVEL_1_SRC) $(LLANURA_NIVEL_2_SRC) \
-	$(MAZMORRA_NIVEL_1_SRC) $(MAZMORRA_NIVEL_2_SRC) $(SEGUIR_HUELLAS_NIVEL_1_SRC) $(DERIVA_SRC) $(MERCADO_RURAL_SRC) \
-	$(MERCADO_RURAL_2_SRC) $(FINAL_BUENO_SRC) $(ESTADO_SRC) $(INVENTARIO_SRC)
+INCLUDE_LIBS = $(NIVEL_1_OBJ) $(NIVEL_2_OBJ) $(NIVEL_3_OBJ) $(LLANURA_NIVEL_1_OBJ) $(LLANURA_NIVEL_2_OBJ) \
+	$(MAZMORRA_NIVEL_1_OBJ) $(MAZMORRA_NIVEL_2_OBJ) $(SEGUIR_HUELLAS_NIVEL_1_OBJ) $(DERIVA_OBJ) $(MERCADO_RURAL_OBJ) \
+	$(MERCADO_RURAL_2_OBJ) $(FINAL_BUENO_OBJ) $(ESTADO_OBJ) $(INVENTARIO_OBJ) $(UTILS_OBJ)
 
 $(BUILD_DIR)/nivel_1:
 	mkdir -p $(BUILD_DIR)/nivel_1
@@ -93,6 +95,9 @@ $(BUILD_DIR)/mundo/inventario: $(BUILD_DIR)/mundo
 $(BUILD_DIR)/mundo/estado: $(BUILD_DIR)/mundo
 	mkdir -p $(BUILD_DIR)/mundo/estado
 
+$(BUILD_DIR)/utils: $(BUILD_DIR)/utils
+	mkdir -p $(BUILD_DIR)/utils
+
 
 # COMPILAR EL PROGRAMA PRINCIPAL INCLUYENDO -lniveles
 all: $(MAIN_SRC) $(INCLUDE_LIBS)
@@ -111,7 +116,7 @@ $(NIVEL_3_OBJ): $(NIVEL_3_SRC) $(BUILD_DIR)/nivel_3
 $(MAZMORRA_NIVEL_1_OBJ): $(NIVEL_1_SRC) $(BUILD_DIR)/mazmorra_nivel_1
 	$(CC) $(CFLAGS) -c $(MAZMORRA_NIVEL_1_SRC) -o $(MAZMORRA_NIVEL_1_OBJ)
 
-$(MAZMORRA_NIVEL_2_OBJ): $(NIVEL_2_SRC) $(BUILD_DIR)/mazmorra_nivel_1
+$(MAZMORRA_NIVEL_2_OBJ): $(NIVEL_2_SRC) $(BUILD_DIR)/mazmorra_nivel_2
 	$(CC) $(CFLAGS) -c $(MAZMORRA_NIVEL_2_SRC) -o $(MAZMORRA_NIVEL_2_OBJ)
 
 $(LLANURA_NIVEL_1_OBJ): $(NIVEL_1_SRC) $(BUILD_DIR)/llanura_nivel_1
@@ -121,7 +126,7 @@ $(LLANURA_NIVEL_2_OBJ): $(NIVEL_2_SRC) $(BUILD_DIR)/llanura_nivel_2
 	$(CC) $(CFLAGS) -c $(LLANURA_NIVEL_2_SRC) -o $(LLANURA_NIVEL_2_OBJ)
 
 $(SEGUIR_HUELLAS_NIVEL_1_OBJ): $(NIVEL_1_SRC) $(BUILD_DIR)/seguir_huellas_nivel_1
-	$(CC) $(CFLAGS) -c $(SEGUIR_HUELLAS_NIVEL_1_SRC) -o $(SEGUIR_HUELLAS-NIVEL_1_OBJ)
+	$(CC) $(CFLAGS) -c $(SEGUIR_HUELLAS_NIVEL_1_SRC) -o $(SEGUIR_HUELLAS_NIVEL_1_OBJ)
 
 $(DERIVA_OBJ): $(NIVEL_1_SRC) $(BUILD_DIR)/deriva
 	$(CC) $(CFLAGS) -c $(DERIVA_SRC) -o $(DERIVA_OBJ)
@@ -140,6 +145,9 @@ $(INVENTARIO_OBJ): $(NIVEL_1_SRC) $(BUILD_DIR)/mundo/inventario
 
 $(ESTADO_OBJ): $(NIVEL_2_SRC) $(BUILD_DIR)/mundo/estado
 	$(CC) $(CFLAGS) -c $(ESTADO_SRC) -o $(ESTADO_OBJ)
+
+$(UTILS_OBJ): $(NIVEL_1_SRC) $(BUILD_DIR)/utils
+	$(CC) $(CFLAGS) -c $(UTILS_SRC) -o $(UTILS_OBJ)
 
 clean:
 	rm -rf $(TARGET)

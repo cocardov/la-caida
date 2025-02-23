@@ -1,5 +1,6 @@
 #include "llanura_nivel_1.hh"
 #include "../llanura_nivel_2/llanura_nivel_2.hh"
+#include "../../utils/utils.hh"
 #include <cstdlib>
 #include <iostream>
 #include <random>
@@ -380,6 +381,7 @@ namespace llanura_nivel_1
             std::cout << "  Intentás seguir durmiendo. Te obligás a hacerlo. \n";
 
             sobrevivir = true;
+            llanura_nivel_2::inic_nivel();
 
             return;
         

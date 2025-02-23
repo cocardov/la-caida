@@ -1,5 +1,6 @@
 #include "deriva.hh"
 #include "../mercado_rural_2/mercado_rural_2.hh"
+#include "../../utils/utils.hh"
 #include <cstdlib>
 #include <iostream>
 #include <random>

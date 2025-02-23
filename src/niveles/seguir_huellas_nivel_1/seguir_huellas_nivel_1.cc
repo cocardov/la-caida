@@ -1,6 +1,7 @@
 #include "seguir_huellas_nivel_1.hh"
 #include "../deriva/deriva.hh"
 #include "../mercado_rural/mercado_rural.hh"
+#include "../../utils/utils.hh"
 #include <cstdlib>
 #include <iostream>
 #include <random>

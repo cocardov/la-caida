@@ -1,5 +1,6 @@
 #include "llanura_nivel_2.hh"
 #include "../seguir_huellas_nivel_1/seguir_huellas_nivel_1.hh"
+#include "../../utils/utils.hh"
 #include "../deriva/deriva.hh"
 #include <cstdlib>
 #include <iostream>

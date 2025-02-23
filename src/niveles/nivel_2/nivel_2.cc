@@ -1,5 +1,6 @@
 #include "nivel_2.hh"
 #include "../nivel_3/nivel_3.hh"
+#include "../../utils/utils.hh"
 #include <cstdlib>
 #include <iostream>
 #include <random>
