@@ -82,9 +82,11 @@ namespace mercado_rural_2
         std::cout << "  Buscás en tu bolso qué era lo que vibraba, pero no encontrás nada capaz de hacerlo. Desesperado, \n";
         std::cout << "corrés hacia las plantas de Noctílora. Sus frutos son tan jugosos que sacias hambre y sed al mismo \n";
         std::cout << "tiempo.\n";
+        std::cout << " \n";
         std::cout << "  Este nuevo entorno te tiene completamente desconcertado, realmente hay puestos manejados por criaturas,\n";
         std::cout << "y criaturas que intercambian cristales parecidos a los que transportan la luz del sol, por otros objetos.\n";
         std::cout << "Un sistema económico completo y bien manejado. \n";
+        std::cout << " \n";
         std::cout << "  Sentís que todos te tienen un ojo encima, no son hostiles, es más, podrías decir que hasta son amables,\n";
         std::cout << "pero es como si por alguna razón estaban esperando tu llegada. Te da muy mala espina. \n";
         std::cout << "  De pronto, se te acerca un mercader, demuestra mucho interés en guiarte por el mercado. \n";

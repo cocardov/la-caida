@@ -79,11 +79,14 @@ namespace mercado_rural
         std::cout << "  Buscás en tu bolso qué era lo que vibraba, pero no encontrás nada capaz de hacerlo. Desesperado, \n";
         std::cout << "corrés hacia unas plantas que tienen frutos enormes, sin pensarlo, comés. Sus frutos son tan jugosos \n";
         std::cout << "que sacias hambre y sed al mismo tiempo.\n";
+        std::cout << " \n";
         std::cout << "  Este nuevo entorno te tiene completamente desconcertado,hay puestos manejados por criaturas, y criaturas\n";
         std::cout << "que intercambian cristales parecidos a los que transportan la luz del sol, por otros objetos. Un sistema \n";
         std::cout << "económico completo y bien manejado. Decidís nombrar a éste lugar 'Mercado'. \n";
+        std::cout << " \n";
         std::cout << "  Sentís que todos te tienen un ojo encima, no son hostiles, es más, podrías decir que hasta son amables,\n";
         std::cout << "pero es como si por alguna razón estaban esperando tu llegada. Te da muy mala espina. \n";
+        std::cout << " \n";
         std::cout << "  De pronto, se te acerca un mercader, demuestra mucho interés en guiarte por el mercado. \n";
         std::cout << " \n";
         std::cout << "1. Aceptar la guía. \n";

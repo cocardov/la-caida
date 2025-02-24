@@ -24,16 +24,18 @@ namespace final_bueno
     std::cout << "aproximadamente 2 metros y salís. Recordás con exactitud los dos días que viviste encerrado en las cuevas, \n";
     std::cout << "pero es como si nada hubiera pasado. No tiene sentido... \n";
     std::cout << " \n";
-    std::cout << "  Te tomás un tiempo para recuperar el aliento y decidís volver por donde viniste. Volviendo sin querer pisás\n";
-    std::cout << "un lagarto. Lo aplastaste, desafortunadamente murió. Su sangre machó el piso. \n";
+    std::cout << "  Te tomás un tiempo para recuperar el aliento y decidís volver por donde viniste. Volviendo, sin querer pisás\n";
+    std::cout << "un lagarto. Lo aplastaste, desafortunadamente murió. Su sangre manchó el piso. \n";
     std::cout << " \n";
     std::cout << "  Sentís que algo en tu bolso empieza a vibrar... \n";
-    std::cout << " \n";
-    std::cout << " \n";
-    std::cout << " \n";
-    std::cout << " \n";
+    std::cout << "                              \n";
+    std::cout << "                              \n";
+    std::cout << "                              \n";
+    std::cout << "                              \n";
     std::cout << " Felicidadesssss, llegaste al <Final bueno>. \n"; 
+    std::cout << "                              \n";
     std::cout << " Gracias por jugar. :P                                                atte. Coco\n";
+    std::cout << "                              \n";
 
     return;
     }//void inic_nivel()
