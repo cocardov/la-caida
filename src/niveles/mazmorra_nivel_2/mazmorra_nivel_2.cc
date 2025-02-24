@@ -1,6 +1,6 @@
 #include "mazmorra_nivel_2.hh"
-// #include "../mazmorra_nivel_2/mazmorra_nivel_2.hh"
-#include "../../utils/utils.hh"
+#include "../mazmorra_nivel_3/mazmorra_nivel_3.hh"
+//#include "../../utils/utils.hh"
 #include <cstdlib>
 #include <iostream>
 #include <random>
@@ -106,8 +106,13 @@ namespace mazmorra_nivel_2
 
         } // 1er while
 
-        std::cout << "peleaste y saliste del primer while\n";
-		//seguir escribiendo
+        std::cout << "\n";
+        std::cout << "  Te da miedo lo que acaba de pasar, nunca habías visto ni hecho nada parecido. Entendés dos cosas, 1. El poder de la\n";
+        std::cout << "daga, y 2. Que volver por la puerta por la que entraste no es opción. Usas la esfera de fuego para prender las antorchas\n";
+        std::cout << "del pasillo, estaban apagadas. Avanzás por el pasillo ahora iluminado.\n";
+		
+        mazmorra_nivel_3::inic_nivel();
+
 		return;
 
     } // void inic_nivel()
@@ -166,7 +171,7 @@ namespace mazmorra_nivel_2
         std::cout << "que sufrió una hemorragia interna debido al ataque. \n";
         std::cout << " \n";
         std::cout << "  No podés pensar en lo que acaba de suceder porque tu bolso te tiene inquieto, vibra con mucha fuerza. Buscás dentro y \n";
-        std::cout << "encontrás que lo que vibra es la runa celeste que encontraste un rato antes. La sacás y la ponés en tu mano. Lo que pasa\n";
+        std::cout << "te das cuenta que lo que vibra es la runa celeste que encontraste un rato antes. La sacás y la ponés en tu mano. Lo que pasa\n";
         std::cout << "a continuación no está escrito en ningún libro. La sangre del bicho muerto empieza a acercarse a vos y trepa por tu cuerpo, \n";
         std::cout << "sube por tus extremidades hasta llegar a la runa y es absorbida por ésta. Sentis mucho asco. \n";
 
