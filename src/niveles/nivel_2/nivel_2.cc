@@ -79,6 +79,7 @@ namespace nivel_2
       std::cout << "para poder ver bien de qué se trata. Lo que tenés en la mano es una especie de cristal \n";
       std::cout << "bastante pulido, casi sin aristas, de color celeste y con una runa que no reconocés \n";
       std::cout << "grabada sobre la superficie. No le dás importancia y la guardás en tu bolso. \n";
+      std::cout << " \n";
       std::cout << "--Runa +1 \n";
       std::cout << " \n";
     }
@@ -95,6 +96,7 @@ namespace nivel_2
     std::cout << "es. Resulta ser una especie de cristal bastante pulido, casi sin aristas, de color \n";
     std::cout << "celeste y con una runa que no reconocés grabada sobre la superficie. No le dás importancia \n";
     std::cout << "y la guardás en tu bolso. \n";
+    std::cout << " \n";
     std::cout << "--Runa +1 \n";
     std::cout << " \n";
     }

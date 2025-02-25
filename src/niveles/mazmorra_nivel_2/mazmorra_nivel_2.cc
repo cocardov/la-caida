@@ -1,6 +1,6 @@
 #include "mazmorra_nivel_2.hh"
 #include "../mazmorra_nivel_3/mazmorra_nivel_3.hh"
-//#include "../../utils/utils.hh"
+#include "../../utils/utils.hh"
 #include <cstdlib>
 #include <iostream>
 #include <random>

@@ -15,6 +15,9 @@ NIVEL_3_OBJ = $(BUILD_DIR)/nivel_3/nivel_3.o
 MAZMORRA_NIVEL_1_OBJ = $(BUILD_DIR)/mazmorra_nivel_1/mazmorra_nivel_1.o
 MAZMORRA_NIVEL_2_OBJ = $(BUILD_DIR)/mazmorra_nivel_2/mazmorra_nivel_2.o
 MAZMORRA_NIVEL_3_OBJ = $(BUILD_DIR)/mazmorra_nivel_3/mazmorra_nivel_3.o
+MAZMORRA_NIVEL_4_OBJ = $(BUILD_DIR)/mazmorra_nivel_4/mazmorra_nivel_4.o
+MAZMORRA_NIVEL_5_OBJ = $(BUILD_DIR)/mazmorra_nivel_5/mazmorra_nivel_5.o
+MAZMORRA_NIVEL_FINAL_OBJ = $(BUILD_DIR)/mazmorra_nivel_final/mazmorra_nivel_final.o
 LLANURA_NIVEL_1_OBJ = $(BUILD_DIR)/llanura_nivel_1/llanura_nivel_1.o
 LLANURA_NIVEL_2_OBJ = $(BUILD_DIR)/llanura_nivel_2/llanura_nivel_2.o
 SEGUIR_HUELLAS_NIVEL_1_OBJ = $(BUILD_DIR)/seguir_huellas_nivel_1/seguir_huellas_nivel_1.o
@@ -34,6 +37,9 @@ NIVEL_3_SRC = $(SOURCE_DIR)/niveles/nivel_3/nivel_3.cc
 MAZMORRA_NIVEL_1_SRC = $(SOURCE_DIR)/niveles/mazmorra_nivel_1/mazmorra_nivel_1.cc
 MAZMORRA_NIVEL_2_SRC = $(SOURCE_DIR)/niveles/mazmorra_nivel_2/mazmorra_nivel_2.cc
 MAZMORRA_NIVEL_3_SRC = $(SOURCE_DIR)/niveles/mazmorra_nivel_3/mazmorra_nivel_3.cc
+MAZMORRA_NIVEL_4_SRC = $(SOURCE_DIR)/niveles/mazmorra_nivel_4/mazmorra_nivel_4.cc
+MAZMORRA_NIVEL_5_SRC = $(SOURCE_DIR)/niveles/mazmorra_nivel_5/mazmorra_nivel_5.cc
+MAZMORRA_NIVEL_FINAL_SRC = $(SOURCE_DIR)/niveles/mazmorra_nivel_final/mazmorra_nivel_final.cc
 LLANURA_NIVEL_1_SRC = $(SOURCE_DIR)/niveles/llanura_nivel_1/llanura_nivel_1.cc
 LLANURA_NIVEL_2_SRC = $(SOURCE_DIR)/niveles/llanura_nivel_2/llanura_nivel_2.cc
 SEGUIR_HUELLAS_NIVEL_1_SRC = $(SOURCE_DIR)/niveles/seguir_huellas_nivel_1/seguir_huellas_nivel_1.cc
@@ -51,7 +57,8 @@ CC = g++
 
 INCLUDE_LIBS = $(NIVEL_1_OBJ) $(NIVEL_2_OBJ) $(NIVEL_3_OBJ) $(LLANURA_NIVEL_1_OBJ) $(LLANURA_NIVEL_2_OBJ) \
 	$(MAZMORRA_NIVEL_1_OBJ) $(MAZMORRA_NIVEL_2_OBJ) $(SEGUIR_HUELLAS_NIVEL_1_OBJ) $(DERIVA_OBJ) $(MERCADO_RURAL_OBJ) \
-	$(MERCADO_RURAL_2_OBJ) $(FINAL_BUENO_OBJ) $(ESTADO_OBJ) $(INVENTARIO_OBJ) $(UTILS_OBJ) $(MAZMORRA_NIVEL_3_OBJ)
+	$(MERCADO_RURAL_2_OBJ) $(FINAL_BUENO_OBJ) $(ESTADO_OBJ) $(INVENTARIO_OBJ) $(UTILS_OBJ) $(MAZMORRA_NIVEL_3_OBJ) \
+	$(MAZMORRA_NIVEL_4_OBJ) $(MAZMORRA_NIVEL_5_OBJ) $(MAZMORRA_NIVEL_FINAL_OBJ)
 
 $(BUILD_DIR)/nivel_1:
 	mkdir -p $(BUILD_DIR)/nivel_1
@@ -70,6 +77,15 @@ $(BUILD_DIR)/mazmorra_nivel_2:
 
 $(BUILD_DIR)/mazmorra_nivel_3:
 	mkdir -p $(BUILD_DIR)/mazmorra_nivel_3
+
+$(BUILD_DIR)/mazmorra_nivel_4:
+	mkdir -p $(BUILD_DIR)/mazmorra_nivel_4
+
+$(BUILD_DIR)/mazmorra_nivel_5:
+	mkdir -p $(BUILD_DIR)/mazmorra_nivel_5
+
+$(BUILD_DIR)/mazmorra_nivel_final:
+	mkdir -p $(BUILD_DIR)/mazmorra_nivel_final
 
 $(BUILD_DIR)/llanura_nivel_1:
 	mkdir -p $(BUILD_DIR)/llanura_nivel_1
@@ -126,6 +142,15 @@ $(MAZMORRA_NIVEL_2_OBJ): $(NIVEL_2_SRC) $(BUILD_DIR)/mazmorra_nivel_2
 	
 $(MAZMORRA_NIVEL_3_OBJ): $(NIVEL_3_SRC) $(BUILD_DIR)/mazmorra_nivel_3
 	$(CC) $(CFLAGS) -c $(MAZMORRA_NIVEL_3_SRC) -o $(MAZMORRA_NIVEL_3_OBJ)
+
+$(MAZMORRA_NIVEL_4_OBJ): $(NIVEL_4_SRC) $(BUILD_DIR)/mazmorra_nivel_4
+	$(CC) $(CFLAGS) -c $(MAZMORRA_NIVEL_4_SRC) -o $(MAZMORRA_NIVEL_4_OBJ)
+
+$(MAZMORRA_NIVEL_5_OBJ): $(NIVEL_5_SRC) $(BUILD_DIR)/mazmorra_nivel_5
+	$(CC) $(CFLAGS) -c $(MAZMORRA_NIVEL_5_SRC) -o $(MAZMORRA_NIVEL_5_OBJ)
+
+$(MAZMORRA_NIVEL_FINAL_OBJ): $(NIVEL_1_SRC) $(BUILD_DIR)/mazmorra_nivel_final
+	$(CC) $(CFLAGS) -c $(MAZMORRA_NIVEL_FINAL_SRC) -o $(MAZMORRA_NIVEL_FINAL_OBJ)
 
 $(LLANURA_NIVEL_1_OBJ): $(NIVEL_1_SRC) $(BUILD_DIR)/llanura_nivel_1
 	$(CC) $(CFLAGS) -c $(LLANURA_NIVEL_1_SRC) -o $(LLANURA_NIVEL_1_OBJ)

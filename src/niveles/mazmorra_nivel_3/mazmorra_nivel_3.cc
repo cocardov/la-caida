@@ -1,6 +1,6 @@
 #include "mazmorra_nivel_3.hh"
-// #include "../mazmorra_nivel_2/mazmorra_nivel_2.hh"
-//#include "../../utils/utils.hh"
+#include "../mazmorra_nivel_4/mazmorra_nivel_4.hh"
+#include "../../utils/utils.hh"
 #include <cstdlib>
 #include <iostream>
 #include <random>
@@ -58,9 +58,71 @@ namespace mazmorra_nivel_3
 
         } // 1er while
 
-        std::cout << " saliste del primer while, mataste al bicho de orejas grandes\n";
+        std::cout << "  Inspeccionás el cuerpo de la criatura. Una parte es distinta, parece ser el estómago, pero sentís un cilindro duro. Diseccionás\n";
+        std::cout << "el estómago y encontrás dentro del cilindro un pergamino. La curiosidad no de deja esperar para abrirlo...\n";
+        std::cout << "\n";
+        std::cout << "  Está escrito en el mismo idioma antiguo de la placa que estaba al lado de la primer puerta, por alguna razón lo entendés. Dice:\n";
+        std::cout << "\n";
+        std::cout << "----------------------------------------------------------------------------------------------------------------------------------\n";
+        std::cout << "\n";
+        std::cout << "   El que lea este pergamino obtendrá, de forma automática, la capacidad de entender e interpretar el idioma Dravash, constituído \n";
+        std::cout << " de 1.342 runas y 78 caracteres.\n";
+        std::cout << "\n";
+        std::cout << "----------------------------------------------------------------------------------------------------------------------------------\n";
+        std::cout << "\n";
+        std::cout << "  Terminás de leerlo y se vuelve llamas. Te asustás y lo tirás al piso. Se consume y solo quedan cenizas.\n";
+        std::cout << "\n";
+        std::cout << "  Quedás impresionado, pero se te ocurre otra idea. Inspeccionás todos los objetos de tu mochila.\n";
+        std::cout << "\n";
+        std::cout << "  En el mango de la daga dice <Sonido>.\n";
+        std::cout << "  Lo que habías anotado en tu diario dice <Ignición> y <Esfera>.\n";
+        std::cout << "  Finalmente, la runa dice <Elíxir de Vida Eterna> y <Conexión>.\n";
+        std::cout << "\n";
+        std::cout << "  Necesitás tiempo para procesar toda esta nueva información, pero ahora tenés mucha sed y hambre, además del cansancio. Te alimentás\n";
+        std::cout << "pero te preocupa que dentro de poco te quedes sin recursos.\n";
+        std::cout << "\n";
+        std::cout << "1. Dormir.\n";
+        std::cout << "2. Seguir avanzando.\n";
         std::cout << "\n";
 
+        elegir= true;
+
+        while (elegir == true)
+        {
+            std::string option;
+            std::cout << "Tu elección: ";
+            std::getline(std::cin, option);
+
+            switch (std::atoi(option.c_str()))
+            {
+            case 1:
+                std::cout << "\n";
+                std::cout << "  Decidís que estás muy cansado como para continuar, la comida te dio fiaca y parece que ahora está todo tranquilo.\n";
+                std::cout << "  Te acostás en el piso a dormir. Dormís cerca de 4 horas y un ruido te despierta. No vés qué lo hizo, pero pensás que \n";
+                std::cout << "es mejor avanzar.\n";
+                elegir = false;
+                break;
+            case 2:
+                mazmorra_nivel_4::inic_nivel();
+                elegir = false;
+                return;
+                
+            default:
+                std::cout << " \n";
+                std::cout << " \n";
+                std::cout << " \n";
+                std::cout << "Por favor elige una opción válida" << std::endl;
+                std::cout << " \n";
+                std::cout << "1. Dormir. \n";
+                std::cout << "2. Seguir avanzando. \n";
+                std::cout << " \n";
+
+                break;
+            }
+
+        }//while dormir
+
+        mazmorra_nivel_4::inic_nivel();
         return;
 
     } // void inic_nivel()
